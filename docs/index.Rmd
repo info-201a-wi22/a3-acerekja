@@ -1,0 +1,45 @@
+---
+title: 'Assignment 3: Data Visualization (Incarceration)'
+author: "Andy Cerekja"
+date: "3/4/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("analysis.R")
+library(knitr)
+```
+
+### Introduction
+
+For this assignment, I will be analyzing a large dataset provided to me via the Vera Institute that displays incarceration stats by county each year since 1970. This is a massive dataset with plenty of different variables to be analyzed, but for my project I wanted to analyze how incarceration varies by race in the United States. The two populations I decided to analyze were the Black and Asian/Pacific Island populations. I chose these two because I wanted to see how differently the United States prison system treats two of the most prominent minority groups in our country. Systemic racism has long been prevalent in our country, and the prison system itself has anti-black origins. I wanted to investigate what I could bring out of this dataset to see how much these premises are still in place today.
+
+### Summary Information
+
+Through different calculations and manipulations of various variables in the data set, I was able to find some pretty interesting calculations at face value. 
+One of the variables I wanted to figure out was where both Black people and Asian/Pacific Islanders were most likely to be incarcerated at the most recent point in the dataset. For these calculations, I used the population from 15-64 for both races in each state and then compared them to the number of people from their respective race incarcerated. This found that Wyoming had the highest percentage of their black population incarcerated while Utah had the highest percentage of thier Asian population incarcerated.
+Another variable I was curious in investigated was the percentage of the respective races population aged 15 to 64 that was incarcerated at the most recent data collection in 2018. These calculations led me to find out that 0.85% of Black people aged 15 to 64 in the United States were incarcerated, while 0.049% of Asian/Pacific Islanders aged 15 to 64 were incarcerated. The big difference in these numbers shows the United States prison systems systemic issues with Black people in the country, but the next variable calculated displays this even more.
+I also wanted to calculate the percentage of the prison population both of these populations make up, and compare that to the percentage of the overall population they made up. Theoretically, you would expect these percentages to line up fairly well, but that isn't what my research found. Instead I found out that Asian/Pacific Islanders made up 6.75% of the overall population, but only 0.96% of the jail population. This is in major contrast to my calculation on the Black population, which showed that they made up 13.48% of the national population, but 33.58% of the prison population.
+Through these calculations, they all show a very clear trend in the variance of incarceration by race. No matter how much society tries to disguise it, the systemic ways of bringing down Black people in our nation are still present. But I wanted to put further research into this. I wanted to see if the data is still trending this way, or if we are beginning to see some improvements.
+
+### Time Trend Chart
+'''{r, echo = FALSE}
+black_aapi_annual
+'''
+
+This chart illustrates the trend from 2010-2018 in the number of Black and Asian/Pacific Islanders incarcerated across the United States. I chose to make this chart to check if the inequality towards imprisonment of black people was trending upwards or downwards. I was pleased to see a consistent downwards trend in the data, displaying that as a nation we are beginning to become more self-aware of the faults in our system and are working towards fixing them. The Asian/Pacific Islanders trend line has stayed consistent, and is overall at a very low value in comparison to that of the Black population.
+
+### Variable Comparison Chart
+'''{r, echo = FALSE}
+black_vs_total
+'''
+
+This chart displays the trend from 2000-2018 of the number of Black people incarcerated vs the total number of people incarcerated for each year in the United States. I chose to make this chart because, again, I wanted to see how the nation has been trenidng in terms of fixing the inequalities that exist in the prison system that causes the Black population to be disproportionality represented, and I also wanted to see if I could pinpoint exactly where this change began to occur. In this chart, a clear upwards trend can be seen until from 2000-2008, but in 2008 after the election of President Obama a downwards trend can be seen in the dataset. This downwards trend is again, a great overall sign in the progress we have began to make as a nation.
+
+### Map
+'''{r, echo = FALSE}
+blackpop_county_heatmap
+'''
+
+This map displays a "heat map" of the incarcerated Black population by County in 2018. I chose to create this map because I wanted to see if any geographical trends on where a lot of the black population is being incarcerated can be noticed. Some trends that I notice in the map is that map definitely has more bright spots in the South, showing that their Confederate history still carries some weight today. Brighter spots are also visible in a lot of the 'Tornado Alley' states where the population isn't that high, which again details how the Black population in those areas are being treated unfairly. 

@@ -1,14 +1,15 @@
 ---
 title: 'Assignment 3: Data Visualization (Incarceration)'
 author: "Andy Cerekja"
-date: "3/4/2022"
+date: "February 25th, 2022"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include = FALSE}
+source("../source/analysis.R")
 knitr::opts_chunk$set(echo = TRUE)
-source("analysis.R")
 library(knitr)
+library(ggplot2)
 ```
 
 ### Introduction
